@@ -8,5 +8,82 @@
 .content {
     height: 100%;
     width: 1150px;
-    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 100%;
+    width: 107px;
+    border: 5px solid transparent;
+}
+
+.search {
+    width: 361px;
+    height: 50px;
+    border-radius: 92px;
+    display: flex;
+    padding-left: 16px;
+    background-color: rgb(22, 24, 35, 0.06);
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 1.6rem;
+        border: none;
+        outline: none;
+        // padding: 12px 0;
+        background-color: transparent;
+    }
+
+    input:not(:placeholder-shown) ~ .btnsearch {
+        color: rgba(22, 24, 35, 0.75);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        // right: 255px;
+        width: 1px;
+        height: calc(46px - 18px);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color: rgb(22, 24, 35, 0.2);
+    }
+}
+.clear,
+.loading {
+    border: none;
+    outline: none;
+    // position: absolute;
+    right: 52px;
+    top: 50%;
+    // transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.btnsearch {
+    width: 52px;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+.ActionUser {
 }
