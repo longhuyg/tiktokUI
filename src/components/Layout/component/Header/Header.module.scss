@@ -19,8 +19,13 @@
     border: 5px solid transparent;
 }
 
-.search {
+.search,
+.search-result {
     width: 361px;
+}
+
+.search {
+    // width: 361px;
     height: 50px;
     border-radius: 92px;
     display: flex;
@@ -42,11 +47,12 @@
     input:not(:placeholder-shown) ~ .btnsearch {
         color: rgba(22, 24, 35, 0.75);
     }
-    &::after {
+    &:after {
         content: '';
         position: absolute;
-        top: 9px;
-        // right: 255px;
+        top: 15px;
+        // left: 660px;
+        right: 596px;
         width: 1px;
         height: calc(46px - 18px);
         background-color: rgba(22, 24, 35, 0.12);
@@ -56,6 +62,7 @@
         border-color: rgb(22, 24, 35, 0.2);
     }
 }
+
 .clear,
 .loading {
     border: none;
