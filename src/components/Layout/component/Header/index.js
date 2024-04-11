@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faCloudArrowUp, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
 import logo from '../../Image/logo-Tiktok.jpg';
-
+import AccountItem from '../../../Accounts';
 import { Wapper as PopperWrrapper } from '../Poper';
+import Button from '../../../Button';
+
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -18,7 +20,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResults(['lien he', 'sach', 'phim']);
+            setSearchResults([]);
         }, 3000);
     }, []);
 
@@ -35,7 +37,13 @@ function Header() {
                     onClickOutside={hide}
                     render={(atrrs) => (
                         <div className={cx('search-result')} tabIndex={-1} {...atrrs}>
-                            <PopperWrrapper>ket qua</PopperWrrapper>
+                            <PopperWrrapper>
+                                <h4 className={cx('search-lable')}> Accounts</h4>
+                                <AccountItem></AccountItem>
+                                <AccountItem></AccountItem>
+                                <AccountItem></AccountItem>
+                                <AccountItem></AccountItem>
+                            </PopperWrrapper>
                         </div>
                     )}
                 >
@@ -55,8 +63,8 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('ActionUser')}>
-                    <FontAwesomeIcon icon={faCloudArrowUp} />
-                    <FontAwesomeIcon icon={faUser} />
+                    <Button text> Upload</Button>
+                    <Button primary>login</Button>
                 </div>
             </div>
         </header>
