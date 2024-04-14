@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faEllipsisVertical,
+    faLanguage,
+    faCircleQuestion,
+    faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
@@ -9,8 +17,25 @@ import logo from '../../Image/logo-Tiktok.jpg';
 import AccountItem from '../../../Accounts';
 import { Wapper as PopperWrrapper } from '../Poper';
 import Button from '../../../Button';
+import Menu from '../Poper/MenuItems';
 
 const cx = classNames.bind(styles);
+
+const DATA_MENU = [
+    {
+        icon: <FontAwesomeIcon icon={faLanguage} />,
+        tittle: 'Tiếng việc',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        tittle: 'Feadback and help',
+        to: './feadback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        tittle: 'keyboard shortcuts',
+    },
+];
 
 function Header() {
     const [searchResults, setSearchResults] = useState([]);
@@ -20,7 +45,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResults([]);
+            // setSearchResults([]);
         }, 3000);
     }, []);
 
@@ -65,6 +90,15 @@ function Header() {
                 <div className={cx('ActionUser')}>
                     <Button text> Upload</Button>
                     <Button primary>login</Button>
+
+                    <Menu
+                        items={DATA_MENU}
+                        props={
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
+                            </button>
+                        }
+                    ></Menu>
                 </div>
             </div>
         </header>
