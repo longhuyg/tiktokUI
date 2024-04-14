@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -24,16 +24,23 @@ const cx = classNames.bind(styles);
 const DATA_MENU = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
-        tittle: 'Tiếng việc',
+        title: 'Tiếng Việt',
+        Children: {
+            title: 'Language',
+            data: [
+                { code: 'en', title: 'English' },
+                { code: 'vi', title: 'Tiếng Việt' },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        tittle: 'Feadback and help',
+        title: 'Feadback and help',
         to: './feadback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        tittle: 'keyboard shortcuts',
+        title: 'keyboard shortcuts',
     },
 ];
 
@@ -48,6 +55,10 @@ function Header() {
             // setSearchResults([]);
         }, 3000);
     }, []);
+    //handle
+    const handleMenuChange = (MenuItem) => {
+        console.log(MenuItem);
+    };
 
     return (
         <header className={cx('wapper')}>
@@ -93,6 +104,7 @@ function Header() {
 
                     <Menu
                         items={DATA_MENU}
+                        onChange={handleMenuChange}
                         props={
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
