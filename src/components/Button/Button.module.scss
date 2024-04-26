@@ -13,6 +13,10 @@
     cursor: pointer;
     border: 1px solid transparent;
 
+    // button link
+    text-decoration: none;
+    color: #000000;
+
     + .Wrapper {
         margin-left: 8px;
     }

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const defaultFN = () => {};
 
-function Menu({ props, items = [], onChange = defaultFN }) {
+function Menu({ props, items = [], hideOnClick = false, onChange = defaultFN }) {
     const [history, setHistory] = useState([{ data: items }]);
 
     const current = history[history.length - 1];
@@ -36,7 +36,7 @@ function Menu({ props, items = [], onChange = defaultFN }) {
     };
     return (
         <Tippy
-            visible
+            hideOnClick={hideOnClick}
             interactive
             delay={[0, 800]}
             placement="bottom-end"
@@ -55,6 +55,9 @@ function Menu({ props, items = [], onChange = defaultFN }) {
                     </PopperWrrapper>
                 </div>
             )}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {props}
         </Tippy>
