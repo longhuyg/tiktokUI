@@ -15,13 +15,13 @@ import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
-import logo from '../../../../assets/Image/logo-Tiktok.jpg';
-import Button from '../../../Button';
+import logo from '../../../assets/Image/logo-Tiktok.jpg';
+import Button from '../../../components/Button';
 import Menu from '../Poper/MenuItems';
-import { Mesenger, Notification, UploadIcon } from '../../../icon';
-import Image from '../../../image';
+import { Mesenger, Notification, UploadIcon } from '../../../components/icon';
+import Image from '../../../components/image';
 import Search from '../Search';
-import routerConfig from '../../../../config/routers';
+import config from '../../../config';
 
 const cx = classNames.bind(styles);
 
@@ -83,7 +83,7 @@ function Header() {
         <header className={cx('wapper')}>
             <div className={cx('content')}>
                 <div className={cx('logo')}>
-                    <Link to={routerConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={logo} alt="" />
                     </Link>
                 </div>

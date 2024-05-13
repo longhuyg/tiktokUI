@@ -2,10 +2,10 @@ import { useEffect, useState, useRef } from 'react';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
-import AccountItem from '../../../Accounts';
+import AccountItem from '../../../components/Accounts';
 import { Wapper as PopperWrrapper } from '../Poper';
-import { useDelayFun } from '../../../../Hooks';
-import * as searchServices from '../../../../apiServices/searchServices';
+import { useDelayFun } from '../../../Hooks';
+import * as searchServices from '../../../services/searchServices';
 
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
@@ -49,7 +49,7 @@ function Search() {
 
     const handleOnChange = (e) => {
         const searchValue = e.target.value;
-        if (!searchValue.starswidth(' ')) {
+        if (!searchValue.startsWith(' ')) {
             setSearchValue(searchValue);
         }
     };
