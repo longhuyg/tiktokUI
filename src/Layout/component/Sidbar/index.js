@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Sidbar.module.scss';
 import config from '../../../config';
 import Menu, { MenuItem } from './Menu';
+import SuggestedAccounts from '../../../components/SuggestedAccounts';
 import { Home, Following, Friend, Discover, Live as Liveicon } from '../../../components/icon';
 
 const cx = classNames.bind(styles);
@@ -16,6 +17,9 @@ function Sidbar() {
                 <MenuItem title="Discover" to={config.routes.discover} icon={<Discover />}></MenuItem>
                 <MenuItem title="Live" to={config.routes.live} icon={<Liveicon />}></MenuItem>
             </Menu>
+
+            <SuggestedAccounts label="Suggested Account" />
+            <SuggestedAccounts label="Follwing Account" />
         </aside>
     );
 }

@@ -1,0 +1,47 @@
+.wrapper {
+    width: 320px;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btnFollow {
+    padding: 6px 16px;
+}
+
+.Body {
+    margin-top: 12px;
+    color: #000;
+}
+
+.item-check {
+    margin-left: 6px;
+    font-size: 1.4rem;
+    color: #20d5ec;
+}
+
+.item-nickname {
+    font-size: 1.8rem;
+}
+.item-name {
+    font-size: 1.4rem;
+}
+.analytics {
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+.Number ~ .Number {
+    margin-left: 20px;
+}
+.lable {
+    color: #161823bf;
+}

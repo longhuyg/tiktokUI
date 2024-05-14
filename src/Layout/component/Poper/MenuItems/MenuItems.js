@@ -18,7 +18,7 @@ function MenuItems({ data, onClick }) {
 }
 
 MenuItems.propTypes = {
-    data: PropTypes.node,
+    data: PropTypes.object.isRequired,
     onClick: PropTypes.func,
 };
 
