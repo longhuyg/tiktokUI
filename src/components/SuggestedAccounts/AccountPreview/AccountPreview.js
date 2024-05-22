@@ -13,7 +13,7 @@ function AccountPreview() {
             <header className={cx('header')}>
                 <img
                     className={cx('Avatar')}
-                    src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/43f64dfa14db9964fd98660a56878062.jpeg?lk3s=a5d48078&x-expires=1715817600&x-signature=ADtxVTKxEZq3fFTT0FNCVNHxtfU%3D"
+                    src="https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7325749780766785538.jpeg?lk3s=a5d48078&nonce=91378&refresh_token=91840800350b8e8e56647286aa4d6d9f&x-expires=1716523200&x-signature=wp%2BqRdwYiOWBAaOMHO31P7XWuMQ%3D&shp=a5d48078&shcp=81f88b70&quot"
                     alt=""
                 />
                 <Button className={cx('btnFollow')} primary>
